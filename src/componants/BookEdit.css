@@ -1,0 +1,9 @@
+
+
+.editForm__input{
+
+    width: inherit;
+    display: inline-block;
+    width: 100%;
+    margin: 0.5rem 0 ;
+}
