@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./BookEdit.css";
+import useBookContext from "../Hooks/useBookContext";
 
-function BookEdit({book, onEdit, handelEditClose}){
+function BookEdit({book, handelEditClose}){
 
+
+    const{handelEditBook} = useBookContext();
     const[edited, setEdit] = useState(book.title);
 
     const handelChange = (event) => {
@@ -12,7 +15,7 @@ function BookEdit({book, onEdit, handelEditClose}){
     // Pervent the deafult behavior of site
     const handelSubmit = (event) => {
         event.preventDefault();
-        onEdit(book , edited);
+        handelEditBook(book , edited);
         handelEditClose();
     };
 
